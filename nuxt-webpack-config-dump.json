@@ -1,0 +1,949 @@
+{
+  "name": "client",
+  "mode": "production",
+  "devtool": "source-map",
+  "optimization": {
+    "minimize": true,
+    "splitChunks": {
+      "chunks": "async",
+      "automaticNameDelimiter": ".",
+      "cacheGroups": {
+        "commons": {
+          "test": {},
+          "chunks": "all",
+          "priority": 10,
+          "name": true
+        }
+      }
+    },
+    "runtimeChunk": "single",
+    "minimizer": []
+  },
+  "output": {
+    "path": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/.nuxt/dist/client",
+    "filename": "[chunkhash].js",
+    "futureEmitAssets": true,
+    "chunkFilename": "[chunkhash].js",
+    "publicPath": "/_nuxt/"
+  },
+  "performance": {
+    "maxEntrypointSize": 1000000,
+    "hints": "warning",
+    "maxAssetSize": 1000000
+  },
+  "module": {
+    "rules": [
+      {
+        "test": {},
+        "loader": "vue-loader",
+        "options": {
+          "transformAssetUrls": {
+            "video": "src",
+            "image": "xlink:href",
+            "b-img": "src",
+            "b-img-lazy": [
+              "src",
+              "blank-src"
+            ],
+            "b-card": "img-src",
+            "b-card-img": "src",
+            "b-card-img-lazy": [
+              "src",
+              "blank-src"
+            ],
+            "b-carousel-slide": "img-src",
+            "b-embed": "src",
+            "source": "src",
+            "object": "src",
+            "embed": "src"
+          },
+          "productionMode": true
+        }
+      },
+      {
+        "test": {},
+        "oneOf": [
+          {
+            "resourceQuery": {},
+            "use": [
+              {
+                "loader": "pug-plain-loader",
+                "options": {}
+              }
+            ]
+          },
+          {
+            "use": [
+              "raw-loader",
+              {
+                "loader": "pug-plain-loader",
+                "options": {}
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "test": {},
+        "use": [
+          {
+            "loader": "cache-loader",
+            "options": {
+              "cacheDirectory": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/node_modules/.cache/cache-loader/client"
+            }
+          },
+          {
+            "loader": "thread-loader",
+            "options": {
+              "name": "js",
+              "poolTimeout": 2000
+            }
+          },
+          {
+            "loader": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/node_modules/babel-loader/lib/index.js",
+            "options": {
+              "configFile": false,
+              "babelrc": false,
+              "cacheDirectory": false,
+              "envName": "client",
+              "presets": [
+                [
+                  "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/node_modules/@nuxt/babel-preset-app/src/index.js",
+                  {}
+                ]
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "test": {},
+        "oneOf": [
+          {
+            "resourceQuery": {},
+            "use": [
+              {
+                "loader": "cache-loader",
+                "options": {
+                  "cacheDirectory": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/node_modules/.cache/cache-loader/client"
+                }
+              },
+              {
+                "loader": "thread-loader",
+                "options": {
+                  "name": "css",
+                  "poolTimeout": 2000
+                }
+              },
+              {
+                "loader": "vue-style-loader",
+                "options": {
+                  "sourceMap": false
+                }
+              },
+              {
+                "loader": "css-loader",
+                "options": {
+                  "modules": {
+                    "localIdentName": "[local]_[hash:base64:5]"
+                  },
+                  "sourceMap": false,
+                  "importLoaders": 2,
+                  "onlyLocals": false
+                }
+              },
+              {
+                "loader": "postcss-loader",
+                "options": {
+                  "sourceMap": false,
+                  "plugins": [
+                    null,
+                    null,
+                    null,
+                    null
+                  ],
+                  "order": "presetEnvAndCssnanoLast"
+                }
+              }
+            ]
+          },
+          {
+            "use": [
+              {
+                "loader": "cache-loader",
+                "options": {
+                  "cacheDirectory": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/node_modules/.cache/cache-loader/client"
+                }
+              },
+              {
+                "loader": "thread-loader",
+                "options": {
+                  "name": "css",
+                  "poolTimeout": 2000
+                }
+              },
+              {
+                "loader": "vue-style-loader",
+                "options": {
+                  "sourceMap": false
+                }
+              },
+              {
+                "loader": "css-loader",
+                "options": {
+                  "sourceMap": false,
+                  "importLoaders": 2,
+                  "onlyLocals": false
+                }
+              },
+              {
+                "loader": "postcss-loader",
+                "options": {
+                  "sourceMap": false,
+                  "plugins": [
+                    null,
+                    null,
+                    null,
+                    null
+                  ],
+                  "order": "presetEnvAndCssnanoLast"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "test": {},
+        "oneOf": [
+          {
+            "resourceQuery": {},
+            "use": [
+              {
+                "loader": "cache-loader",
+                "options": {
+                  "cacheDirectory": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/node_modules/.cache/cache-loader/client"
+                }
+              },
+              {
+                "loader": "thread-loader",
+                "options": {
+                  "name": "css",
+                  "poolTimeout": 2000
+                }
+              },
+              {
+                "loader": "vue-style-loader",
+                "options": {
+                  "sourceMap": false
+                }
+              },
+              {
+                "loader": "css-loader",
+                "options": {
+                  "modules": {
+                    "localIdentName": "[local]_[hash:base64:5]"
+                  },
+                  "sourceMap": false,
+                  "importLoaders": 2,
+                  "onlyLocals": false
+                }
+              },
+              {
+                "loader": "postcss-loader",
+                "options": {
+                  "sourceMap": false,
+                  "plugins": [
+                    null,
+                    null,
+                    null,
+                    null
+                  ],
+                  "order": "presetEnvAndCssnanoLast"
+                }
+              }
+            ]
+          },
+          {
+            "use": [
+              {
+                "loader": "cache-loader",
+                "options": {
+                  "cacheDirectory": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/node_modules/.cache/cache-loader/client"
+                }
+              },
+              {
+                "loader": "thread-loader",
+                "options": {
+                  "name": "css",
+                  "poolTimeout": 2000
+                }
+              },
+              {
+                "loader": "vue-style-loader",
+                "options": {
+                  "sourceMap": false
+                }
+              },
+              {
+                "loader": "css-loader",
+                "options": {
+                  "sourceMap": false,
+                  "importLoaders": 2,
+                  "onlyLocals": false
+                }
+              },
+              {
+                "loader": "postcss-loader",
+                "options": {
+                  "sourceMap": false,
+                  "plugins": [
+                    null,
+                    null,
+                    null,
+                    null
+                  ],
+                  "order": "presetEnvAndCssnanoLast"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "test": {},
+        "oneOf": [
+          {
+            "resourceQuery": {},
+            "use": [
+              {
+                "loader": "cache-loader",
+                "options": {
+                  "cacheDirectory": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/node_modules/.cache/cache-loader/client"
+                }
+              },
+              {
+                "loader": "thread-loader",
+                "options": {
+                  "name": "css",
+                  "poolTimeout": 2000
+                }
+              },
+              {
+                "loader": "vue-style-loader",
+                "options": {
+                  "sourceMap": false
+                }
+              },
+              {
+                "loader": "css-loader",
+                "options": {
+                  "modules": {
+                    "localIdentName": "[local]_[hash:base64:5]"
+                  },
+                  "sourceMap": false,
+                  "importLoaders": 2,
+                  "onlyLocals": false
+                }
+              },
+              {
+                "loader": "postcss-loader",
+                "options": {
+                  "sourceMap": false,
+                  "plugins": [
+                    null,
+                    null,
+                    null,
+                    null
+                  ],
+                  "order": "presetEnvAndCssnanoLast"
+                }
+              },
+              {
+                "loader": "less-loader",
+                "options": {
+                  "sourceMap": false
+                }
+              }
+            ]
+          },
+          {
+            "use": [
+              {
+                "loader": "cache-loader",
+                "options": {
+                  "cacheDirectory": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/node_modules/.cache/cache-loader/client"
+                }
+              },
+              {
+                "loader": "thread-loader",
+                "options": {
+                  "name": "css",
+                  "poolTimeout": 2000
+                }
+              },
+              {
+                "loader": "vue-style-loader",
+                "options": {
+                  "sourceMap": false
+                }
+              },
+              {
+                "loader": "css-loader",
+                "options": {
+                  "sourceMap": false,
+                  "importLoaders": 2,
+                  "onlyLocals": false
+                }
+              },
+              {
+                "loader": "postcss-loader",
+                "options": {
+                  "sourceMap": false,
+                  "plugins": [
+                    null,
+                    null,
+                    null,
+                    null
+                  ],
+                  "order": "presetEnvAndCssnanoLast"
+                }
+              },
+              {
+                "loader": "less-loader",
+                "options": {
+                  "sourceMap": false
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "test": {},
+        "oneOf": [
+          {
+            "resourceQuery": {},
+            "use": [
+              {
+                "loader": "cache-loader",
+                "options": {
+                  "cacheDirectory": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/node_modules/.cache/cache-loader/client"
+                }
+              },
+              {
+                "loader": "thread-loader",
+                "options": {
+                  "name": "css",
+                  "poolTimeout": 2000
+                }
+              },
+              {
+                "loader": "vue-style-loader",
+                "options": {
+                  "sourceMap": false
+                }
+              },
+              {
+                "loader": "css-loader",
+                "options": {
+                  "modules": {
+                    "localIdentName": "[local]_[hash:base64:5]"
+                  },
+                  "sourceMap": false,
+                  "importLoaders": 2,
+                  "onlyLocals": false
+                }
+              },
+              {
+                "loader": "postcss-loader",
+                "options": {
+                  "sourceMap": false,
+                  "plugins": [
+                    null,
+                    null,
+                    null,
+                    null
+                  ],
+                  "order": "presetEnvAndCssnanoLast"
+                }
+              },
+              {
+                "loader": "sass-loader",
+                "options": {
+                  "sassOptions": {
+                    "indentedSyntax": true
+                  },
+                  "sourceMap": false
+                }
+              }
+            ]
+          },
+          {
+            "use": [
+              {
+                "loader": "cache-loader",
+                "options": {
+                  "cacheDirectory": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/node_modules/.cache/cache-loader/client"
+                }
+              },
+              {
+                "loader": "thread-loader",
+                "options": {
+                  "name": "css",
+                  "poolTimeout": 2000
+                }
+              },
+              {
+                "loader": "vue-style-loader",
+                "options": {
+                  "sourceMap": false
+                }
+              },
+              {
+                "loader": "css-loader",
+                "options": {
+                  "sourceMap": false,
+                  "importLoaders": 2,
+                  "onlyLocals": false
+                }
+              },
+              {
+                "loader": "postcss-loader",
+                "options": {
+                  "sourceMap": false,
+                  "plugins": [
+                    null,
+                    null,
+                    null,
+                    null
+                  ],
+                  "order": "presetEnvAndCssnanoLast"
+                }
+              },
+              {
+                "loader": "sass-loader",
+                "options": {
+                  "sassOptions": {
+                    "indentedSyntax": true
+                  },
+                  "sourceMap": false
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "test": {},
+        "oneOf": [
+          {
+            "resourceQuery": {},
+            "use": [
+              {
+                "loader": "cache-loader",
+                "options": {
+                  "cacheDirectory": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/node_modules/.cache/cache-loader/client"
+                }
+              },
+              {
+                "loader": "thread-loader",
+                "options": {
+                  "name": "css",
+                  "poolTimeout": 2000
+                }
+              },
+              {
+                "loader": "vue-style-loader",
+                "options": {
+                  "sourceMap": false
+                }
+              },
+              {
+                "loader": "css-loader",
+                "options": {
+                  "modules": {
+                    "localIdentName": "[local]_[hash:base64:5]"
+                  },
+                  "sourceMap": false,
+                  "importLoaders": 2,
+                  "onlyLocals": false
+                }
+              },
+              {
+                "loader": "postcss-loader",
+                "options": {
+                  "sourceMap": false,
+                  "plugins": [
+                    null,
+                    null,
+                    null,
+                    null
+                  ],
+                  "order": "presetEnvAndCssnanoLast"
+                }
+              },
+              {
+                "loader": "sass-loader",
+                "options": {
+                  "sourceMap": false
+                }
+              }
+            ]
+          },
+          {
+            "use": [
+              {
+                "loader": "cache-loader",
+                "options": {
+                  "cacheDirectory": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/node_modules/.cache/cache-loader/client"
+                }
+              },
+              {
+                "loader": "thread-loader",
+                "options": {
+                  "name": "css",
+                  "poolTimeout": 2000
+                }
+              },
+              {
+                "loader": "vue-style-loader",
+                "options": {
+                  "sourceMap": false
+                }
+              },
+              {
+                "loader": "css-loader",
+                "options": {
+                  "sourceMap": false,
+                  "importLoaders": 2,
+                  "onlyLocals": false
+                }
+              },
+              {
+                "loader": "postcss-loader",
+                "options": {
+                  "sourceMap": false,
+                  "plugins": [
+                    null,
+                    null,
+                    null,
+                    null
+                  ],
+                  "order": "presetEnvAndCssnanoLast"
+                }
+              },
+              {
+                "loader": "sass-loader",
+                "options": {
+                  "sourceMap": false
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "test": {},
+        "oneOf": [
+          {
+            "resourceQuery": {},
+            "use": [
+              {
+                "loader": "cache-loader",
+                "options": {
+                  "cacheDirectory": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/node_modules/.cache/cache-loader/client"
+                }
+              },
+              {
+                "loader": "thread-loader",
+                "options": {
+                  "name": "css",
+                  "poolTimeout": 2000
+                }
+              },
+              {
+                "loader": "vue-style-loader",
+                "options": {
+                  "sourceMap": false
+                }
+              },
+              {
+                "loader": "css-loader",
+                "options": {
+                  "modules": {
+                    "localIdentName": "[local]_[hash:base64:5]"
+                  },
+                  "sourceMap": false,
+                  "importLoaders": 2,
+                  "onlyLocals": false
+                }
+              },
+              {
+                "loader": "postcss-loader",
+                "options": {
+                  "sourceMap": false,
+                  "plugins": [
+                    null,
+                    null,
+                    null,
+                    null
+                  ],
+                  "order": "presetEnvAndCssnanoLast"
+                }
+              },
+              {
+                "loader": "stylus-loader",
+                "options": {
+                  "sourceMap": false
+                }
+              }
+            ]
+          },
+          {
+            "use": [
+              {
+                "loader": "cache-loader",
+                "options": {
+                  "cacheDirectory": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/node_modules/.cache/cache-loader/client"
+                }
+              },
+              {
+                "loader": "thread-loader",
+                "options": {
+                  "name": "css",
+                  "poolTimeout": 2000
+                }
+              },
+              {
+                "loader": "vue-style-loader",
+                "options": {
+                  "sourceMap": false
+                }
+              },
+              {
+                "loader": "css-loader",
+                "options": {
+                  "sourceMap": false,
+                  "importLoaders": 2,
+                  "onlyLocals": false
+                }
+              },
+              {
+                "loader": "postcss-loader",
+                "options": {
+                  "sourceMap": false,
+                  "plugins": [
+                    null,
+                    null,
+                    null,
+                    null
+                  ],
+                  "order": "presetEnvAndCssnanoLast"
+                }
+              },
+              {
+                "loader": "stylus-loader",
+                "options": {
+                  "sourceMap": false
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "test": {},
+        "use": [
+          {
+            "loader": "url-loader",
+            "options": {
+              "limit": 1000,
+              "name": "img/[hash:7].[ext]"
+            }
+          }
+        ]
+      },
+      {
+        "test": {},
+        "use": [
+          {
+            "loader": "url-loader",
+            "options": {
+              "limit": 1000,
+              "name": "fonts/[hash:7].[ext]"
+            }
+          }
+        ]
+      },
+      {
+        "test": {},
+        "use": [
+          {
+            "loader": "file-loader",
+            "options": {
+              "name": "videos/[hash:7].[ext]"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "plugins": [
+    {},
+    {},
+    {
+      "profile": false,
+      "modulesCount": 500,
+      "showEntries": false,
+      "showModules": true,
+      "showActiveModules": true,
+      "options": {
+        "name": "client",
+        "color": "green",
+        "reporters": [
+          "basic",
+          "fancy",
+          "profile",
+          "stats"
+        ],
+        "reporter": {},
+        "basic": false,
+        "fancy": true,
+        "profile": false,
+        "stats": {
+          "excludeAssets": [
+            {},
+            {},
+            {}
+          ]
+        }
+      },
+      "reporters": [
+        {},
+        {
+          "options": {
+            "chunks": false,
+            "children": false,
+            "modules": false,
+            "colors": true,
+            "warnings": true,
+            "errors": true,
+            "excludeAssets": [
+              {},
+              {},
+              {}
+            ]
+          }
+        },
+        {}
+      ]
+    },
+    {
+      "options": {
+        "info": {
+          "level": "warn"
+        }
+      }
+    },
+    {
+      "options": {
+        "template": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/.nuxt/views/app.template.html",
+        "filename": "../server/index.spa.html",
+        "hash": false,
+        "inject": true,
+        "compile": true,
+        "favicon": false,
+        "minify": {
+          "collapseBooleanAttributes": true,
+          "decodeEntities": true,
+          "minifyCSS": true,
+          "minifyJS": true,
+          "processConditionalComments": true,
+          "removeEmptyAttributes": true,
+          "removeRedundantAttributes": true,
+          "trimCustomFragments": true,
+          "useShortDoctype": true
+        },
+        "cache": true,
+        "showErrors": true,
+        "chunks": "all",
+        "excludeChunks": [],
+        "chunksSortMode": "dependency",
+        "meta": {},
+        "title": "Webpack App",
+        "xhtml": false
+      }
+    },
+    {
+      "options": {
+        "filename": "../server/client.manifest.json"
+      }
+    },
+    {
+      "definitions": {
+        "process.env.NODE_ENV": "\"production\"",
+        "process.mode": "\"production\"",
+        "process.static": true,
+        "process.env.CDN_LOCAL": true,
+        "process.env.CDN_PORT": 5000,
+        "process.env.VUE_ENV": "\"client\"",
+        "process.browser": true,
+        "process.client": true,
+        "process.server": false,
+        "process.modern": false
+      }
+    }
+  ],
+  "resolve": {
+    "extensions": [
+      ".wasm",
+      ".mjs",
+      ".js",
+      ".json",
+      ".vue",
+      ".jsx"
+    ],
+    "alias": {
+      "~~": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample",
+      "@@": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample",
+      "~": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample",
+      "@": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample",
+      "assets": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/assets",
+      "static": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/static",
+      "vue-meta": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/node_modules/vue-meta/dist/vue-meta.esm.browser.js",
+      "nuxt_plugin_bootstrapvue_2165fa24": "./bootstrap-vue.js",
+      "nuxt_plugin_axios_20a853bf": "./axios.js",
+      "nuxt_plugin_config_2be35234": "../plugins/axios/config.js",
+      "nuxt_plugin_config_2b0f57bd": "../plugins/ag-grid/config.js",
+      "nuxt_plugin_config_2ac3b853": "../plugins/highcharts/config.js",
+      "vue": "vue/dist/vue.common"
+    },
+    "modules": [
+      "node_modules",
+      "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/node_modules/nuxt/bin/node_modules",
+      "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/node_modules/nuxt/node_modules",
+      "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/node_modules",
+      "/Users/Olivier/Documents/dev/nuxt-playground/node_modules",
+      "/Users/Olivier/Documents/dev/node_modules",
+      "/Users/Olivier/Documents/node_modules",
+      "/Users/Olivier/node_modules",
+      "/Users/node_modules",
+      "/node_modules"
+    ]
+  },
+  "resolveLoader": {
+    "modules": [
+      "node_modules",
+      "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/node_modules/nuxt/bin/node_modules",
+      "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/node_modules/nuxt/node_modules",
+      "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/node_modules",
+      "/Users/Olivier/Documents/dev/nuxt-playground/node_modules",
+      "/Users/Olivier/Documents/dev/node_modules",
+      "/Users/Olivier/Documents/node_modules",
+      "/Users/Olivier/node_modules",
+      "/Users/node_modules",
+      "/node_modules"
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+$grey-dark: #aaa;
+$grey-border: #bbb;
+$grey-border-light: #cccccc;
+$grey-btn-active: #cdcdcd;
+$grey-btn-hover: #dddedf;
+$grey-btn-base: #f1f1f1;
+
+$title-color: #333;
+$info-color: #999;
+
+$border: 1px solid $grey-border;
+$border-light: 1px solid $grey-border-light;
+
+// SG Colors
+
+// Standard primary colors
+
+$white: #ffffff;
+$corp-red: #e60028;
+$sapphire-blue: #23558c;
+$gray-base: #333333;
+$gray-ultra-light: #f5f5f5;
+$gray-light: #cccccc;
+$blue-dark: #2f333e;
+$black: #000000;
+
+// Standard secondary colors
+
+$brand-success: #35bd5b;
+$brand-info: #009bcd;
+$brand-warning: #f17100;
+$brand-danger: #b9292d;
+$green-light: #bcf7cd;
+$blue-light: #b2e1f0;
+$orange-light: #ffd6b0;
+$red-light: #f7b2be;
+$blue-dark2: #444852;
+$blue-dark3: #21242b;
+$blue-dark4: #191e28;
+$gray-lighter: #dddedf;
+$gray: #777777;
+$gray-dark: #4c4c4c;
+
+// // Highcharts
+
+$red: #dc4941;
+$blue-dark2b: #444852;
+$blue-gray: #b4bbcb;
+$royal-blue: #6488ff;
+$sea-green: #41c49d;
+$slate-blue: #5c56e8;
+$sienna: #e88e5e;
+$dark-royal-blue: #38699f;
+$dark-sea-green: #408182;
+$dark-slate-blue: #514b90;
+$dark-sienna: #854b4b;
+
+:export {
+  // Standard primary colors
+
+  white: $white;
+  corpred: $corp-red;
+  sapphireblue: $sapphire-blue;
+  graybase: $gray-base;
+  grayultralight: $gray-ultra-light;
+  graylight: $gray-light;
+  bluedark: $blue-dark;
+  black: $black;
+
+  // Standard secondary colors
+
+  brandsuccess: $brand-success;
+  brandinfo: $brand-info;
+  brandwarning: $brand-warning;
+  branddanger: $brand-danger;
+  greenlight: $green-light;
+  bluelight: $blue-light;
+  orangelight: $orange-light;
+  redlight: $red-light;
+  bluedark2: $blue-dark2;
+  bluedark3: $blue-dark3;
+  bluedark4: $blue-dark4;
+  graylighter: $gray-lighter;
+  gray: $gray;
+  graydark: $gray-dark;
+
+  // Highcharts
+
+  red: $red;
+  bluedark2b: $blue-dark2b;
+  bluegray: $blue-gray;
+  royalblue: $royal-blue;
+  seagreen: $sea-green;
+  slateblue: $slate-blue;
+  sienna: $sienna;
+  darkroyalblue: $dark-royal-blue;
+  darkseagreen: $dark-sea-green;
+  darkslateblue: $dark-slate-blue;
+  darksienna: $dark-sienna;
+}

@@ -1,0 +1,11 @@
+# necessary to push to PyPI
+# cf. https://tom-christie.github.io/articles/pypi/
+
+# subfolders
+# recursive-include build_frontend/data *
+# recursive-include build_frontend/single-file index.html
+
+# Misc
+include LICENSE requirements.txt
+
+global-exclude *.py[cod] .ipynb_checkpoints .DS_Store

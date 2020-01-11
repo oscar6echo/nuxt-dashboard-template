@@ -1,0 +1,28 @@
+@import './colors.scss';
+
+// modt = my opiniated dashboard template
+
+.modt.action-button {
+  background-color: $grey-btn-base;
+  border: $border;
+  border-radius: 0;
+}
+
+.modt.my-dropdown {
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: $grey-btn-base;
+  border: $border;
+  border-radius: 0px;
+}
+
+.modt.my-title {
+  height: 40px;
+  color: $title-color;
+  font-weight: 400;
+  font-size: 35px;
+}
+
+.modt.my-subtitle {
+  color: $title-color;
+}

@@ -816,10 +816,6 @@ export default {
       if (process.env.CDN_PORT) uri += ':' + process.env.CDN_PORT;
       uri += process.env.CDN_PREFIX + '/' + name;
 
-      //   const hostname = process.env.CDN_HOSTNAME;
-      //   const prefix = process.env.CDN_LOCAL ? '/' : hostname + '/';
-      //   const uri = prefix + name;
-
       const response = await fetch(uri);
       this.wasmArrayBuffer = await response.arrayBuffer();
       console.log('wasmArrayBuffer');

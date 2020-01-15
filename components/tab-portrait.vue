@@ -66,17 +66,6 @@ export default {
   },
   methods: {
     getImage() {
-      //   let uri;
-      //   if (process.env.CDN_LOCAL === true) {
-
-      //     const port = process.env.CDN_PORT;
-      //     uri = `http://localhost:${port}/${this.filename}`;
-      //   } else {
-      //     const hostname = process.env.CDN_HOSTNAME;
-      //     const prefix = process.env.CDN_PREFIX;
-      //     uri = `${hostname}/${prefix}${this.filename}`;
-      //   }
-
       let uri = process.env.CDN_HOST;
       if (process.env.CDN_PORT) uri += ':' + process.env.CDN_PORT;
       uri += process.env.CDN_PREFIX + '/' + this.filename;

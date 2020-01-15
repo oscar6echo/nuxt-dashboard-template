@@ -141,23 +141,6 @@ const ENV =
     ? { CDN_HOST: GH_HOST, CDN_PREFIX: GH_PREFIX }
     : 'IMPOSSIBLE';
 
-// const ENV =
-//   process.env.MODE === 'DEV'
-//     ? { CDN_LOCAL: true, CDN_PORT: LOCAL_CDN_PORT }
-//     : process.env.MODE === 'SF-LOCAL'
-//     ? { CDN_LOCAL: true, CDN_PORT: SF_LOCAL_CDN_PORT }
-//     : process.env.MODE === 'DIR-LOCAL'
-//     ? { CDN_LOCAL: true, CDN_PORT: DIR_LOCAL_CDN_PORT }
-//     : process.env.MODE === 'SF'
-//     ? { CDN_LOCAL: false, CDN_HOSTNAME: SF_HOST, CDN_PREFIX: SF_PREFIX }
-//     : process.env.MODE === 'GHP'
-//     ? {
-//         CDN_LOCAL: false,
-//         CDN_HOSTNAME: 'https://' + GH_USERNAME + '.github.io/' + GH_REPO,
-//         CDN_PREFIX: 'cdn/'
-//       }
-//     : 'IMPOSSIBLE';
-
 ENV.CONSOLE_LOG = CONSOLE_LOG;
 
 let MODULES = [

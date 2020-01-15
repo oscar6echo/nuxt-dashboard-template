@@ -84,11 +84,4 @@ staticFiles.forEach((e) => {
   cpx.copySync(e, dst);
 });
 
-// const cdnFiles = getAllFiles(cdn);
-// console.log(`\ncopy ${cdnFiles.length} files in cdn/ to ${dst}`);
-// cdnFiles.forEach((e) => {
-//   console.log('  ', e, ' --> ', path.join(dst, path.basename(e)));
-//   cpx.copySync(e, path.join(dst, 'cdn'));
-// });
-
 console.log('\n---------- DONE');

@@ -810,10 +810,15 @@ export default {
 
     async loadWasmArrayBuffer() {
       if (this.wasmArrayBuffer) return;
+
       const name = 'wasm/mandelbrot.wasm';
-      const hostname = process.env.CDN_HOSTNAME;
-      const prefix = process.env.CDN_LOCAL ? '/' : hostname + '/';
-      const uri = prefix + name;
+      let uri = process.env.CDN_HOST;
+      if (process.env.CDN_PORT) uri += ':' + process.env.CDN_PORT;
+      uri += process.env.CDN_PREFIX + '/' + name;
+
+      //   const hostname = process.env.CDN_HOSTNAME;
+      //   const prefix = process.env.CDN_LOCAL ? '/' : hostname + '/';
+      //   const uri = prefix + name;
 
       const response = await fetch(uri);
       this.wasmArrayBuffer = await response.arrayBuffer();

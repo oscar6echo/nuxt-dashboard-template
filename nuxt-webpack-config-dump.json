@@ -20,10 +20,10 @@
     "minimizer": []
   },
   "output": {
-    "path": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/.nuxt/dist/client",
-    "filename": "[chunkhash].js",
+    "path": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-template/.nuxt/dist/client",
+    "filename": "[contenthash].js",
     "futureEmitAssets": true,
-    "chunkFilename": "[chunkhash].js",
+    "chunkFilename": "[contenthash].js",
     "publicPath": "/_nuxt/"
   },
   "performance": {
@@ -39,20 +39,6 @@
         "options": {
           "transformAssetUrls": {
             "video": "src",
-            "image": "xlink:href",
-            "b-img": "src",
-            "b-img-lazy": [
-              "src",
-              "blank-src"
-            ],
-            "b-card": "img-src",
-            "b-card-img": "src",
-            "b-card-img-lazy": [
-              "src",
-              "blank-src"
-            ],
-            "b-carousel-slide": "img-src",
-            "b-embed": "src",
             "source": "src",
             "object": "src",
             "embed": "src"
@@ -87,20 +73,7 @@
         "test": {},
         "use": [
           {
-            "loader": "cache-loader",
-            "options": {
-              "cacheDirectory": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/node_modules/.cache/cache-loader/client"
-            }
-          },
-          {
-            "loader": "thread-loader",
-            "options": {
-              "name": "js",
-              "poolTimeout": 2000
-            }
-          },
-          {
-            "loader": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/node_modules/babel-loader/lib/index.js",
+            "loader": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-template/node_modules/babel-loader/lib/index.js",
             "options": {
               "configFile": false,
               "babelrc": false,
@@ -108,7 +81,7 @@
               "envName": "client",
               "presets": [
                 [
-                  "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/node_modules/@nuxt/babel-preset-app/src/index.js",
+                  "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-template/node_modules/@nuxt/babel-preset-app/src/index.js",
                   {}
                 ]
               ]
@@ -123,19 +96,6 @@
             "resourceQuery": {},
             "use": [
               {
-                "loader": "cache-loader",
-                "options": {
-                  "cacheDirectory": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/node_modules/.cache/cache-loader/client"
-                }
-              },
-              {
-                "loader": "thread-loader",
-                "options": {
-                  "name": "css",
-                  "poolTimeout": 2000
-                }
-              },
-              {
                 "loader": "vue-style-loader",
                 "options": {
                   "sourceMap": false
@@ -169,19 +129,6 @@
           },
           {
             "use": [
-              {
-                "loader": "cache-loader",
-                "options": {
-                  "cacheDirectory": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/node_modules/.cache/cache-loader/client"
-                }
-              },
-              {
-                "loader": "thread-loader",
-                "options": {
-                  "name": "css",
-                  "poolTimeout": 2000
-                }
-              },
               {
                 "loader": "vue-style-loader",
                 "options": {
@@ -220,19 +167,6 @@
             "resourceQuery": {},
             "use": [
               {
-                "loader": "cache-loader",
-                "options": {
-                  "cacheDirectory": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/node_modules/.cache/cache-loader/client"
-                }
-              },
-              {
-                "loader": "thread-loader",
-                "options": {
-                  "name": "css",
-                  "poolTimeout": 2000
-                }
-              },
-              {
                 "loader": "vue-style-loader",
                 "options": {
                   "sourceMap": false
@@ -266,19 +200,6 @@
           },
           {
             "use": [
-              {
-                "loader": "cache-loader",
-                "options": {
-                  "cacheDirectory": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/node_modules/.cache/cache-loader/client"
-                }
-              },
-              {
-                "loader": "thread-loader",
-                "options": {
-                  "name": "css",
-                  "poolTimeout": 2000
-                }
-              },
               {
                 "loader": "vue-style-loader",
                 "options": {
@@ -316,19 +237,6 @@
           {
             "resourceQuery": {},
             "use": [
-              {
-                "loader": "cache-loader",
-                "options": {
-                  "cacheDirectory": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/node_modules/.cache/cache-loader/client"
-                }
-              },
-              {
-                "loader": "thread-loader",
-                "options": {
-                  "name": "css",
-                  "poolTimeout": 2000
-                }
-              },
               {
                 "loader": "vue-style-loader",
                 "options": {
@@ -369,19 +277,6 @@
           },
           {
             "use": [
-              {
-                "loader": "cache-loader",
-                "options": {
-                  "cacheDirectory": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/node_modules/.cache/cache-loader/client"
-                }
-              },
-              {
-                "loader": "thread-loader",
-                "options": {
-                  "name": "css",
-                  "poolTimeout": 2000
-                }
-              },
               {
                 "loader": "vue-style-loader",
                 "options": {
@@ -426,19 +321,6 @@
             "resourceQuery": {},
             "use": [
               {
-                "loader": "cache-loader",
-                "options": {
-                  "cacheDirectory": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/node_modules/.cache/cache-loader/client"
-                }
-              },
-              {
-                "loader": "thread-loader",
-                "options": {
-                  "name": "css",
-                  "poolTimeout": 2000
-                }
-              },
-              {
                 "loader": "vue-style-loader",
                 "options": {
                   "sourceMap": false
@@ -474,26 +356,18 @@
                   "sassOptions": {
                     "indentedSyntax": true
                   },
-                  "sourceMap": false
+                  "sourceMap": false,
+                  "implementation": {
+                    "info": "dart-sass\t1.24.4\t(Sass Compiler)\t[Dart]\ndart2js\t2.7.0\t(Dart Compiler)\t[Dart]",
+                    "types": {}
+                  },
+                  "prependData": "\n@import '~/assets/scss/vuetify-custom.scss'"
                 }
               }
             ]
           },
           {
             "use": [
-              {
-                "loader": "cache-loader",
-                "options": {
-                  "cacheDirectory": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/node_modules/.cache/cache-loader/client"
-                }
-              },
-              {
-                "loader": "thread-loader",
-                "options": {
-                  "name": "css",
-                  "poolTimeout": 2000
-                }
-              },
               {
                 "loader": "vue-style-loader",
                 "options": {
@@ -527,7 +401,12 @@
                   "sassOptions": {
                     "indentedSyntax": true
                   },
-                  "sourceMap": false
+                  "sourceMap": false,
+                  "implementation": {
+                    "info": "dart-sass\t1.24.4\t(Sass Compiler)\t[Dart]\ndart2js\t2.7.0\t(Dart Compiler)\t[Dart]",
+                    "types": {}
+                  },
+                  "prependData": "\n@import '~/assets/scss/vuetify-custom.scss'"
                 }
               }
             ]
@@ -540,19 +419,6 @@
           {
             "resourceQuery": {},
             "use": [
-              {
-                "loader": "cache-loader",
-                "options": {
-                  "cacheDirectory": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/node_modules/.cache/cache-loader/client"
-                }
-              },
-              {
-                "loader": "thread-loader",
-                "options": {
-                  "name": "css",
-                  "poolTimeout": 2000
-                }
-              },
               {
                 "loader": "vue-style-loader",
                 "options": {
@@ -586,26 +452,18 @@
               {
                 "loader": "sass-loader",
                 "options": {
-                  "sourceMap": false
+                  "sourceMap": false,
+                  "implementation": {
+                    "info": "dart-sass\t1.24.4\t(Sass Compiler)\t[Dart]\ndart2js\t2.7.0\t(Dart Compiler)\t[Dart]",
+                    "types": {}
+                  },
+                  "prependData": "\n@import '~/assets/scss/vuetify-custom.scss';"
                 }
               }
             ]
           },
           {
             "use": [
-              {
-                "loader": "cache-loader",
-                "options": {
-                  "cacheDirectory": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/node_modules/.cache/cache-loader/client"
-                }
-              },
-              {
-                "loader": "thread-loader",
-                "options": {
-                  "name": "css",
-                  "poolTimeout": 2000
-                }
-              },
               {
                 "loader": "vue-style-loader",
                 "options": {
@@ -636,7 +494,12 @@
               {
                 "loader": "sass-loader",
                 "options": {
-                  "sourceMap": false
+                  "sourceMap": false,
+                  "implementation": {
+                    "info": "dart-sass\t1.24.4\t(Sass Compiler)\t[Dart]\ndart2js\t2.7.0\t(Dart Compiler)\t[Dart]",
+                    "types": {}
+                  },
+                  "prependData": "\n@import '~/assets/scss/vuetify-custom.scss';"
                 }
               }
             ]
@@ -649,19 +512,6 @@
           {
             "resourceQuery": {},
             "use": [
-              {
-                "loader": "cache-loader",
-                "options": {
-                  "cacheDirectory": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/node_modules/.cache/cache-loader/client"
-                }
-              },
-              {
-                "loader": "thread-loader",
-                "options": {
-                  "name": "css",
-                  "poolTimeout": 2000
-                }
-              },
               {
                 "loader": "vue-style-loader",
                 "options": {
@@ -702,19 +552,6 @@
           },
           {
             "use": [
-              {
-                "loader": "cache-loader",
-                "options": {
-                  "cacheDirectory": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/node_modules/.cache/cache-loader/client"
-                }
-              },
-              {
-                "loader": "thread-loader",
-                "options": {
-                  "name": "css",
-                  "poolTimeout": 2000
-                }
-              },
               {
                 "loader": "vue-style-loader",
                 "options": {
@@ -759,7 +596,7 @@
             "loader": "url-loader",
             "options": {
               "limit": 1000,
-              "name": "img/[hash:7].[ext]"
+              "name": "img/[contenthash:7].[ext]"
             }
           }
         ]
@@ -771,7 +608,7 @@
             "loader": "url-loader",
             "options": {
               "limit": 1000,
-              "name": "fonts/[hash:7].[ext]"
+              "name": "fonts/[contenthash:7].[ext]"
             }
           }
         ]
@@ -782,10 +619,22 @@
           {
             "loader": "file-loader",
             "options": {
-              "name": "videos/[hash:7].[ext]"
+              "name": "videos/[contenthash:7].[ext]"
             }
           }
         ]
+      },
+      {
+        "test": {},
+        "use": {
+          "loader": "worker-loader",
+          "options": {
+            "inline": true,
+            "fallback": false,
+            "name": "[name].js"
+          }
+        },
+        "exclude": {}
       }
     ]
   },
@@ -841,14 +690,7 @@
     },
     {
       "options": {
-        "info": {
-          "level": "warn"
-        }
-      }
-    },
-    {
-      "options": {
-        "template": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/.nuxt/views/app.template.html",
+        "template": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-template/.nuxt/views/app.template.html",
         "filename": "../server/index.spa.html",
         "hash": false,
         "inject": true,
@@ -885,8 +727,10 @@
         "process.env.NODE_ENV": "\"production\"",
         "process.mode": "\"production\"",
         "process.static": true,
-        "process.env.CDN_LOCAL": true,
+        "process.env.CDN_HOST": "\"http://localhost\"",
         "process.env.CDN_PORT": 5000,
+        "process.env.CDN_PREFIX": "\"\"",
+        "process.env.CONSOLE_LOG": true,
         "process.env.VUE_ENV": "\"client\"",
         "process.browser": true,
         "process.client": true,
@@ -905,15 +749,17 @@
       ".jsx"
     ],
     "alias": {
-      "~~": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample",
-      "@@": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample",
-      "~": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample",
-      "@": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample",
-      "assets": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/assets",
-      "static": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/static",
-      "vue-meta": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/node_modules/vue-meta/dist/vue-meta.esm.browser.js",
-      "nuxt_plugin_bootstrapvue_2165fa24": "./bootstrap-vue.js",
-      "nuxt_plugin_axios_20a853bf": "./axios.js",
+      "~~": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-template",
+      "@@": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-template",
+      "~": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-template",
+      "@": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-template",
+      "assets": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-template/assets",
+      "static": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-template/static",
+      "vue-meta": "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-template/node_modules/vue-meta/dist/vue-meta.esm.browser.js",
+      "nuxt_plugin_plugin_75d83a16": "./vuetify/plugin.js",
+      "nuxt_plugin_templatesplugin2f928798_782a4098": "./templates.plugin.2f928798.js",
+      "nuxt_plugin_axios_1c5f8fa2": "./axios.js",
+      "nuxt_plugin_apollomodule_6eeb64fb": "./apollo-module.js",
       "nuxt_plugin_config_2be35234": "../plugins/axios/config.js",
       "nuxt_plugin_config_2b0f57bd": "../plugins/ag-grid/config.js",
       "nuxt_plugin_config_2ac3b853": "../plugins/highcharts/config.js",
@@ -921,9 +767,9 @@
     },
     "modules": [
       "node_modules",
-      "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/node_modules/nuxt/bin/node_modules",
-      "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/node_modules/nuxt/node_modules",
-      "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/node_modules",
+      "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-template/node_modules/nuxt/bin/node_modules",
+      "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-template/node_modules/nuxt/node_modules",
+      "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-template/node_modules",
       "/Users/Olivier/Documents/dev/nuxt-playground/node_modules",
       "/Users/Olivier/Documents/dev/node_modules",
       "/Users/Olivier/Documents/node_modules",
@@ -935,9 +781,9 @@
   "resolveLoader": {
     "modules": [
       "node_modules",
-      "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/node_modules/nuxt/bin/node_modules",
-      "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/node_modules/nuxt/node_modules",
-      "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-sample/node_modules",
+      "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-template/node_modules/nuxt/bin/node_modules",
+      "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-template/node_modules/nuxt/node_modules",
+      "/Users/Olivier/Documents/dev/nuxt-playground/nuxt-dashboard-template/node_modules",
       "/Users/Olivier/Documents/dev/nuxt-playground/node_modules",
       "/Users/Olivier/Documents/dev/node_modules",
       "/Users/Olivier/Documents/node_modules",

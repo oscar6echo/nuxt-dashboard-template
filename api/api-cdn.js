@@ -1,15 +1,18 @@
 import log from '~/js/generic/log';
 
 const requestCdn = async (axios, name) => {
-  let uri;
-  if (process.env.CDN_LOCAL === true) {
-    const port = process.env.CDN_PORT;
-    uri = `http://localhost:${port}/${name}`;
-  } else {
-    const hostname = process.env.CDN_HOSTNAME;
-    const prefix = process.env.CDN_PREFIX;
-    uri = `${hostname}/${prefix}${name}`;
-  }
+  let uri = process.env.CDN_HOST;
+  if (process.env.CDN_PORT) uri += ':' + process.env.CDN_PORT;
+  uri += process.env.CDN_PREFIX + '/' + name;
+
+  //   if (process.env.CDN_LOCAL === true) {
+  //     const port = process.env.CDN_PORT;
+  //     uri = `http://localhost:${port}/${name}`;
+  //   } else {
+  //     const hostname = process.env.CDN_HOSTNAME;
+  //     const prefix = process.env.CDN_PREFIX;
+  //     uri = `${hostname}/${prefix}${name}`;
+  //   }
 
   log.funcStart('requestCdn', uri);
 

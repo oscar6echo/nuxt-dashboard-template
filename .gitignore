@@ -94,3 +94,4 @@ sw.*
 yarn.lock
 yarn.error
 wip/
+staging/

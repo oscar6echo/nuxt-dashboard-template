@@ -1,4 +1,5 @@
 import fs from 'fs';
+import Datauri from 'datauri';
 
 if (!process.env.DUMP) process.env.DUMP = 'false';
 if (!process.env.MODE) process.env.MODE = 'DEV';
@@ -14,19 +15,25 @@ if (!['bootstrap', 'vuetify'].includes(process.env.CSS)) {
   throw 'CSS must be:\n\nbootstrap\nvuetify';
 }
 
-// GITHUB PARAMS
+// -----------
+// -----------
+// -----------
+// USER INPUTS
+
+const PORT_DEV = 3000;
+const PORT_LOCAL_CDN = 5000;
+
+const SF_SHORTNAME = 'my-dashboard';
+const SF_HOST = 'https://my-prod-hostname';
+const SF_PREFIX = 'my-prefix-';
+
 const GH_USERNAME = 'oscar6echo';
 const GH_REPO = 'nuxt-dashboard-template';
-
-// LOCAL PARAMS
-const LOCAL_CDN_PORT = 5000;
-const SF_LOCAL_CDN_PORT = 8080;
-const DIR_LOCAL_CDN_PORT = 5000;
-
-// SINGLE FILE HOSTING SERVICE PARAMS
-const SF_SHORTNAME = 'my-dashboard';
-const SF_SERVICE = 'https://my-prod-hostname';
-const SF_PREFIX = 'my-prefix-';
+const GH_HOST = 'https://' + GH_USERNAME + '.github.io/' + GH_REPO;
+const GH_PREFIX = 'CDN/';
+// -----------
+// -----------
+// -----------
 
 // NUXT CONFIG PARAMS
 const PUBLIC_PATH =
@@ -123,20 +130,33 @@ const CONSOLE_LOG =
 
 const ENV =
   process.env.MODE === 'DEV'
-    ? { CDN_LOCAL: true, CDN_PORT: LOCAL_CDN_PORT }
+    ? { CDN_HOST: 'http://localhost', CDN_PORT: PORT_LOCAL_CDN, CDN_PREFIX: '' }
     : process.env.MODE === 'SF-LOCAL'
-    ? { CDN_LOCAL: true, CDN_PORT: SF_LOCAL_CDN_PORT }
+    ? { CDN_HOST: 'http://localhost', CDN_PORT: PORT_LOCAL_CDN, CDN_PREFIX: '' }
     : process.env.MODE === 'DIR-LOCAL'
-    ? { CDN_LOCAL: true, CDN_PORT: DIR_LOCAL_CDN_PORT }
+    ? { CDN_HOST: 'http://localhost', CDN_PORT: PORT_DEV, CDN_PREFIX: '/cdn' }
     : process.env.MODE === 'SF'
-    ? { CDN_LOCAL: false, CDN_HOSTNAME: SF_SERVICE, CDN_PREFIX: SF_PREFIX }
+    ? { CDN_HOST: SF_HOST, CDN_PREFIX: SF_PREFIX }
     : process.env.MODE === 'GHP'
-    ? {
-        CDN_LOCAL: false,
-        CDN_HOSTNAME: 'https://' + GH_USERNAME + '.github.io/' + GH_REPO,
-        CDN_PREFIX: 'cdn/'
-      }
+    ? { CDN_HOST: GH_HOST, CDN_PREFIX: GH_PREFIX }
     : 'IMPOSSIBLE';
+
+// const ENV =
+//   process.env.MODE === 'DEV'
+//     ? { CDN_LOCAL: true, CDN_PORT: LOCAL_CDN_PORT }
+//     : process.env.MODE === 'SF-LOCAL'
+//     ? { CDN_LOCAL: true, CDN_PORT: SF_LOCAL_CDN_PORT }
+//     : process.env.MODE === 'DIR-LOCAL'
+//     ? { CDN_LOCAL: true, CDN_PORT: DIR_LOCAL_CDN_PORT }
+//     : process.env.MODE === 'SF'
+//     ? { CDN_LOCAL: false, CDN_HOSTNAME: SF_HOST, CDN_PREFIX: SF_PREFIX }
+//     : process.env.MODE === 'GHP'
+//     ? {
+//         CDN_LOCAL: false,
+//         CDN_HOSTNAME: 'https://' + GH_USERNAME + '.github.io/' + GH_REPO,
+//         CDN_PREFIX: 'cdn/'
+//       }
+//     : 'IMPOSSIBLE';
 
 ENV.CONSOLE_LOG = CONSOLE_LOG;
 
@@ -193,6 +213,16 @@ if (process.env.CSS === 'vuetify')
 
 const TERSER = process.env.MODE === 'DEV' ? false : undefined;
 
+const { base64 } = new Datauri('./static/favicon.ico');
+const FAVICON =
+  process.env.MODE === 'SF' || process.env.MODE === 'SF-LOCAL'
+    ? {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: `data:image/png;base64,${base64}`
+      }
+    : { rel: 'icon', type: 'image/x-icon', href: ROUTER_BASE + 'favicon.ico' };
+
 console.log('\n---------- CONFIG');
 console.log('process.env.NODE_ENV =', process.env.NODE_ENV);
 console.log('process.env.CSS =', process.env.CSS);
@@ -208,12 +238,13 @@ console.log('ENV =', ENV);
 console.log('MODULES =', MODULES);
 console.log('BUILD_MODULES =', BUILD_MODULES);
 console.log('TERSER =', TERSER);
+console.log('FAVICON =', FAVICON);
 console.log('---------- END CONFIG\n');
 
 const nuxtConfig = {
   mode: 'spa',
   server: {
-    port: 3000,
+    port: PORT_DEV,
     host: 'localhost'
   },
   loadingIndicator: {
@@ -241,13 +272,7 @@ const nuxtConfig = {
         content: 'Sample Nuxt Dashboard'
       }
     ],
-    link: [
-      {
-        rel: 'icon',
-        type: 'image/x-icon',
-        href: ROUTER_BASE + 'favicon.ico'
-      }
-    ],
+    link: [FAVICON],
     script: []
   },
   css: [
@@ -315,7 +340,10 @@ const nuxtConfig = {
         config.module.rules.push({
           // test: /Loader\.worker\.js$/,
           test: /.*\.worker\.js$/,
-          use: { loader: 'worker-loader' },
+          use: {
+            loader: 'worker-loader',
+            options: { inline: true, fallback: false, name: '[name].js' }
+          },
           exclude: /(node_modules)/
         });
       }

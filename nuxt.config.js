@@ -30,7 +30,7 @@ const SF_PREFIX = 'my-prefix-';
 const GH_USERNAME = 'oscar6echo';
 const GH_REPO = 'nuxt-dashboard-template';
 const GH_HOST = 'https://' + GH_USERNAME + '.github.io/' + GH_REPO;
-const GH_PREFIX = 'CDN/';
+const GH_PREFIX = '/cdn';
 // -----------
 // -----------
 // -----------

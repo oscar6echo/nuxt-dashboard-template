@@ -22,7 +22,7 @@ const dst = path.join('..', 'dist');
 const cdnFiles = getAllFiles(cdn);
 console.log(`\ncopy ${cdnFiles.length} files in cdn/ to ${dst}`);
 cdnFiles.forEach((e) => {
-  console.log('  ', e, ' --> ', path.join(dst, path.basename(e)));
+  console.log('  ', e, ' --> ', path.join(dst, e));
   cpx.copySync(e, path.join(dst, 'cdn'));
 });
 

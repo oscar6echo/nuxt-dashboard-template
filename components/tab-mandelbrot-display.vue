@@ -814,7 +814,7 @@ export default {
       const name = 'wasm/mandelbrot.wasm';
       let uri = process.env.CDN_HOST;
       if (process.env.CDN_PORT) uri += ':' + process.env.CDN_PORT;
-      uri += process.env.CDN_PREFIX + '/' + name;
+      uri += '/' + name;
 
       const response = await fetch(uri);
       this.wasmArrayBuffer = await response.arrayBuffer();

@@ -60,6 +60,7 @@ export default {
 <style scoped>
 .my-wrapper-index {
   width: 100%;
-  overflow-x: scroll;
+  min-width: 900px;
+  overflow-x: auto;
 }
 </style>

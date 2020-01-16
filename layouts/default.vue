@@ -2,14 +2,9 @@
   <v-app dark>
     <NavBar />
     <v-content class="top-wrapper">
-      <!-- <div class="my-wrapper"> -->
-
-      <!-- <div class="my-content"> -->
       <v-container fluid class="top-wrapper">
         <nuxt />
       </v-container>
-      <!-- </div> -->
-      <!-- </div> -->
     </v-content>
     <Footer />
   </v-app>
@@ -30,18 +25,4 @@ export default {
 .top-wrapper {
   background-color: white;
 }
-
-/* .my-wrapper { */
-/* min-height: 100vh;
-  position: relative;
-  margin: 0; */
-
-/* -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; */
-/* } */
-/* .my-content {
-  min-height: 900px;
-  overflow-y: scroll;
-  margin-top: 10px;
-} */
 </style>

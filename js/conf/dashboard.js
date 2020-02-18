@@ -76,8 +76,16 @@ const buildConf = () => {
 
     // MANUAL CONFIG
     defaultStyle: {
-      level1: { vertical: true, width: '130px', height: '70px' },
-      level2: { vertical: false, width: '125px', height: '70px' }
+      level1: {
+        vertical: true,
+        width: '130px',
+        height: '70px'
+      },
+      level2: {
+        vertical: false,
+        width: '125px',
+        height: '70px'
+      }
     },
 
     // MANUALCONFIG
@@ -93,6 +101,12 @@ const buildConf = () => {
     if (e.tabs && !obj.activeTab.sub[i]) obj.activeTab.sub[i] = 0;
   });
 
+  // REMOVE INVALID SUB KEYS
+  for (const k of Object.keys(tabs)) {
+    if (k < 0 || k >= tabs.length) {
+      delete obj.activeTab.sub[k];
+    }
+  }
   log.funcEnd('buidConf', obj);
   return obj;
 };

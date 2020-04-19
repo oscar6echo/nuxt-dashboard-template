@@ -226,15 +226,15 @@ export default {
   },
 
   methods: {
-    onChange($evt) {
-      console.log($evt);
-      this.idxLocal = $evt;
-    },
+    // onChange($evt) {
+    //   console.log($evt);
+    //   this.idxLocal = $evt;
+    // },
     clickBtnPlayPause() {
       console.log('clickBtnPlayPause');
       if (this.isPlay) {
         this.isPlay = !this.isPlay;
-        clearInterval(this.interval);
+        // clearInterval(this.interval);
       } else {
         this.isPlay = !this.isPlay;
         this.setVariableInterval();
@@ -242,7 +242,7 @@ export default {
     },
     clickBtnStop() {
       console.log('clickBtnStop');
-      clearInterval(this.interval);
+      //   clearInterval(this.interval);
       this.isPlay = false;
       this.idxLocal = 0;
     },
